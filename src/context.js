@@ -26,8 +26,8 @@ class ProductProvider extends Component {
   handleDetail = () => {
     console.log("aum namah shivaya from detail");
   };
-  addToCart = () => {
-    console.log("aum namah shivaya from add to cart");
+  addToCart = id => {
+    console.log(id);
   };
 
   render() {
