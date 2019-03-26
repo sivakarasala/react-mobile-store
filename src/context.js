@@ -11,7 +11,10 @@ class ProductProvider extends Component {
     detailProduct: detailProduct,
     cart: [],
     modalOpen: false,
-    modalProduct: detailProduct
+    modalProduct: detailProduct,
+    cartSubTotal: 0,
+    cartTax: 0,
+    cartTotal: 0
   };
   setProducts = () => {
     let tempProducts = [];
@@ -67,6 +70,22 @@ class ProductProvider extends Component {
     });
   };
 
+  increment = id => {
+    console.log("aum namah Shivaya from increment method");
+  };
+
+  decrement = id => {
+    console.log("aum namah shivaya from decrement method");
+  };
+
+  removeItem = id => {
+    console.log("aum namah shivaya from item removed");
+  };
+
+  clearCart = () => {
+    console.log("aum namah shivaya from cart cleared");
+  };
+
   render() {
     return (
       <ProductContext.Provider
@@ -75,7 +94,11 @@ class ProductProvider extends Component {
           handleDetail: this.handleDetail,
           addToCart: this.addToCart,
           openModal: this.openModal,
-          closeModal: this.closeModal
+          closeModal: this.closeModal,
+          increment: this.increment,
+          decrement: this.decrement,
+          removeItem: this.removeItem,
+          clearCart: this.clearCart
         }}
       >
         {this.props.children}
