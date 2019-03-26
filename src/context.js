@@ -83,7 +83,15 @@ class ProductProvider extends Component {
   };
 
   clearCart = () => {
-    console.log("aum namah shivaya from cart cleared");
+    this.setState(
+      () => {
+        return { cart: [] };
+      },
+      () => {
+        this.setProducts();
+        this.addTotals();
+      }
+    );
   };
 
   addTotals = () => {
